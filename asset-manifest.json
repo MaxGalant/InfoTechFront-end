@@ -1,23 +1,28 @@
 {
   "files": {
-    "main.css": "/InfoTechFront-end/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/InfoTechFront-end/static/js/main.36edc3cc.chunk.js",
-    "main.js.map": "/InfoTechFront-end/static/js/main.36edc3cc.chunk.js.map",
-    "runtime-main.js": "/InfoTechFront-end/static/js/runtime-main.e9e513c5.js",
-    "runtime-main.js.map": "/InfoTechFront-end/static/js/runtime-main.e9e513c5.js.map",
-    "static/js/2.a3da9ac4.chunk.js": "/InfoTechFront-end/static/js/2.a3da9ac4.chunk.js",
-    "static/js/2.a3da9ac4.chunk.js.map": "/InfoTechFront-end/static/js/2.a3da9ac4.chunk.js.map",
-    "static/js/3.ab1c0e67.chunk.js": "/InfoTechFront-end/static/js/3.ab1c0e67.chunk.js",
-    "static/js/3.ab1c0e67.chunk.js.map": "/InfoTechFront-end/static/js/3.ab1c0e67.chunk.js.map",
-    "index.html": "/InfoTechFront-end/index.html",
-    "static/css/main.8c8b27cf.chunk.css.map": "/InfoTechFront-end/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.a3da9ac4.chunk.js.LICENSE.txt": "/InfoTechFront-end/static/js/2.a3da9ac4.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/InfoTechFront-end/static/media/logo.6ce24c58.svg"
+    "main.css": "/Front-end/static/css/main.b74afe93.chunk.css",
+    "main.js": "/Front-end/static/js/main.a55951cd.chunk.js",
+    "main.js.map": "/Front-end/static/js/main.a55951cd.chunk.js.map",
+    "runtime-main.js": "/Front-end/static/js/runtime-main.3f06bc15.js",
+    "runtime-main.js.map": "/Front-end/static/js/runtime-main.3f06bc15.js.map",
+    "static/js/2.639db73a.chunk.js": "/Front-end/static/js/2.639db73a.chunk.js",
+    "static/js/2.639db73a.chunk.js.map": "/Front-end/static/js/2.639db73a.chunk.js.map",
+    "static/js/3.2b0ad566.chunk.js": "/Front-end/static/js/3.2b0ad566.chunk.js",
+    "static/js/3.2b0ad566.chunk.js.map": "/Front-end/static/js/3.2b0ad566.chunk.js.map",
+    "index.html": "/Front-end/index.html",
+    "static/css/main.b74afe93.chunk.css.map": "/Front-end/static/css/main.b74afe93.chunk.css.map",
+    "static/js/2.639db73a.chunk.js.LICENSE.txt": "/Front-end/static/js/2.639db73a.chunk.js.LICENSE.txt",
+    "static/media/bank.cd22b4c5.png": "/Front-end/static/media/bank.cd22b4c5.png",
+    "static/media/bankCard.0d947a36.jpg": "/Front-end/static/media/bankCard.0d947a36.jpg",
+    "static/media/create.c9876c2f.jpg": "/Front-end/static/media/create.c9876c2f.jpg",
+    "static/media/delete.df128b47.jpeg": "/Front-end/static/media/delete.df128b47.jpeg",
+    "static/media/edit.39282b59.jpg": "/Front-end/static/media/edit.39282b59.jpg",
+    "static/media/mortgage.5c300177.jpg": "/Front-end/static/media/mortgage.5c300177.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.e9e513c5.js",
-    "static/js/2.a3da9ac4.chunk.js",
-    "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.36edc3cc.chunk.js"
+    "static/js/runtime-main.3f06bc15.js",
+    "static/js/2.639db73a.chunk.js",
+    "static/css/main.b74afe93.chunk.css",
+    "static/js/main.a55951cd.chunk.js"
   ]
 }
