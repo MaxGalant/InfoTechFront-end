@@ -14,6 +14,7 @@ const BankSet = (props) => {
       (Response) => {
         if (Response.status === 200) {
           if (Response.data.length > 0) {
+            console.log(Response)
             setBanks(Response.data);
             setMessage("");
           } else {
