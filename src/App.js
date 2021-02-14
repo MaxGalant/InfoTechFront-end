@@ -7,7 +7,7 @@ import { Route } from "react-router-dom";
 const App = () => {
   return (
     <div className={s.App}>
-      <Route exact  path="/" render={() => <MiddlePage />} />
+      <Route exact  path="/InfoTechFront-end" render={() => <MiddlePage />} />
       <Route exact  path="/bank" render={() => <Bank />} />
       <Route exact  path="/mortgage" render={() => <Mortgage />} />
     </div>
