@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/InfoTechFront-end:/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/InfoTechFront-end:/static/js/main.36edc3cc.chunk.js",
-    "main.js.map": "/InfoTechFront-end:/static/js/main.36edc3cc.chunk.js.map",
-    "runtime-main.js": "/InfoTechFront-end:/static/js/runtime-main.80cb0638.js",
-    "runtime-main.js.map": "/InfoTechFront-end:/static/js/runtime-main.80cb0638.js.map",
-    "static/js/2.a3da9ac4.chunk.js": "/InfoTechFront-end:/static/js/2.a3da9ac4.chunk.js",
-    "static/js/2.a3da9ac4.chunk.js.map": "/InfoTechFront-end:/static/js/2.a3da9ac4.chunk.js.map",
-    "static/js/3.ab1c0e67.chunk.js": "/InfoTechFront-end:/static/js/3.ab1c0e67.chunk.js",
-    "static/js/3.ab1c0e67.chunk.js.map": "/InfoTechFront-end:/static/js/3.ab1c0e67.chunk.js.map",
-    "index.html": "/InfoTechFront-end:/index.html",
-    "static/css/main.8c8b27cf.chunk.css.map": "/InfoTechFront-end:/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.a3da9ac4.chunk.js.LICENSE.txt": "/InfoTechFront-end:/static/js/2.a3da9ac4.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/InfoTechFront-end:/static/media/logo.6ce24c58.svg"
+    "main.css": "/InfoTechFront-end/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/InfoTechFront-end/static/js/main.36edc3cc.chunk.js",
+    "main.js.map": "/InfoTechFront-end/static/js/main.36edc3cc.chunk.js.map",
+    "runtime-main.js": "/InfoTechFront-end/static/js/runtime-main.e9e513c5.js",
+    "runtime-main.js.map": "/InfoTechFront-end/static/js/runtime-main.e9e513c5.js.map",
+    "static/js/2.a3da9ac4.chunk.js": "/InfoTechFront-end/static/js/2.a3da9ac4.chunk.js",
+    "static/js/2.a3da9ac4.chunk.js.map": "/InfoTechFront-end/static/js/2.a3da9ac4.chunk.js.map",
+    "static/js/3.ab1c0e67.chunk.js": "/InfoTechFront-end/static/js/3.ab1c0e67.chunk.js",
+    "static/js/3.ab1c0e67.chunk.js.map": "/InfoTechFront-end/static/js/3.ab1c0e67.chunk.js.map",
+    "index.html": "/InfoTechFront-end/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/InfoTechFront-end/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.a3da9ac4.chunk.js.LICENSE.txt": "/InfoTechFront-end/static/js/2.a3da9ac4.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/InfoTechFront-end/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.80cb0638.js",
+    "static/js/runtime-main.e9e513c5.js",
     "static/js/2.a3da9ac4.chunk.js",
     "static/css/main.8c8b27cf.chunk.css",
     "static/js/main.36edc3cc.chunk.js"
