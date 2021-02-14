@@ -4,7 +4,6 @@ const Table = (props) => {
   let table = [];
   let TotalPayment = Number(props.result);
   let initialLoan = props.initialLoan - props.downPayment;
-  console.log(initialLoan);
   let initial = initialLoan;
   let downPayment = props.downPayment;
   let balanceRent = 0;

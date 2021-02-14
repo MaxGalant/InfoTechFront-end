@@ -27,6 +27,7 @@ const Mortgage = (props) => {
       let arrBank = strBank.split(" ");
       Axios.get("http://localhost:3001/bank/" + arrBank[0]).then(
         (Response) => {
+          console.log(Response.status)
           if (Response.status === 200) {
             setData(Response.data);
             setMonth(Response.data[0].loan_term);
@@ -36,6 +37,7 @@ const Mortgage = (props) => {
           }
         },
         (err) => {
+          console.log(Response.status)
           setMessage("Error, something went wrong");
         }
       );
