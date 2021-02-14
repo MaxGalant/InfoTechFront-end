@@ -1,0 +1,88 @@
+@import "../../Style/Color.scss";
+@import "../../Style/Template.scss";
+.EditBank {
+  width: 100%;
+  margin-top: 50px;
+  .AppereanceBlock {
+    display: inline-flex;
+  
+    .AppereanceContent {
+      width: 1000px; 
+      
+
+       position: absolute;
+      left: -1000px;
+      background-color: green;
+      border-radius: 0 0 50px 0;
+
+      .AppereanceBlockTitle {
+        margin-top: 10px;
+        margin-bottom: 50px;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 600;
+        color: white;
+      }
+      .BankList {
+        font-size: 25px;
+        color: white;
+        text-align: center;
+        width: 900px;
+        margin: 10px auto;
+        display: grid;
+        grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "BankIcon BankName BankRate BankMax BankMin BankTerm";
+        .BankIcon {
+          grid-area: BankIcon;
+          .BankSvg {
+            font-size: 40px;
+            color: $gold-mustard;
+          }
+        }
+        .BankName {
+          grid-area: BankName;
+        }
+        .BankRate {
+          grid-area: BankRate;
+        }
+        .BankMax {
+          grid-area: BankMax;
+        }
+        .BankMin {
+          grid-area: BankMin;
+        }
+        .BankTerm {
+          grid-area: BankTerm;
+        }
+      }
+    }
+    .AppereanceBut {
+      position: absolute;
+      border-radius: 0 20px 20px 0;
+      width: 70px;
+      height: 60px;
+      background: $gold-mustard;
+      .AppereanceArrow1 {
+        display: none;
+        font-size: 50px;
+        color: white;
+        margin: 5px 0 5px 20px;
+      }
+      .AppereanceArrow2 {
+        margin: 5px 0 5px 20px;
+
+        font-size: 50px;
+        color: white;
+        text-align: center;
+      }
+    }
+  }
+  .Message{
+    @extend %Message;
+    width: 500px;
+    font-size: 35px;
+    grid-area: Message;
+    margin: 50px auto;
+
+  }
+}

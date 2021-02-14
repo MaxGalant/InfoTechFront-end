@@ -1,0 +1,135 @@
+@import "../../Style/Template.scss";
+@import "../../Style/Color.scss";
+.CreateBank {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 0.8fr 1fr;
+  grid-template-areas: ". CreateBankBlock .";
+  .CreateBankBlock {
+    grid-area: CreateBankBlock;
+    width: 100%;
+    height: 100%;
+    .BankForm {
+      height: 100%;
+      display: grid;
+      grid-template-rows: 0.3fr 1fr;
+      grid-template-areas: "BankImg" "BankFormBlock";
+      border: 3px solid green;
+      background-color: white;
+      .BankImg {
+        margin: 40px auto;
+        grid-area: BankImg;
+        .ImgBorder {
+          padding: 17px;
+          border-radius: 50%;
+          border: 5px $main-color solid;
+          height: 80px;
+          width: 80px;
+          img {
+            height: 80px;
+            width: 80px;
+          }
+        }
+      }
+      .BankFormBlock {
+        grid-area: BankFormBlock;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 0.4fr 1fr;
+        grid-template-areas: "BankFormTitle" "BankName" "BankInterestRate" "BankMaximumLoan" "MinimumDownPayment" "LoanTerm" "Message" "CreateBlockButton";
+        .BankFormTitle {
+          font-size: 45px;
+          font-weight: 600;
+          color: $main-color;
+          text-align: center;
+          grid-area: BankFormTitle;
+        }
+        .BankName {
+          @extend %FormItems;
+          grid-area: BankName;
+        }
+        .BankInterestRate {
+          @extend %FormItems;
+          grid-area: BankInterestRate;
+        }
+        .BankMaximumLoan {
+          @extend %FormItems;
+          grid-area: BankMaximumLoan;
+        }
+        .MinimumDownPayment {
+          @extend %FormItems;
+          grid-area: MinimumDownPayment;
+        }
+        .LoanTerm {
+          @extend %FormItems;
+          grid-area: LoanTerm;
+        }
+        .Message {
+          @extend %Message;
+          width: 450px;
+          grid-area: Message;
+        }
+        .CompMessage{
+          @extend %Message;
+          width: 450px;
+          color: $main-color;
+          grid-area: Message;
+        }
+        .CreateBlockButton {
+          width: 250px;
+          border: 2px solid $main-color;
+          border-radius: 25px;
+          text-align: center;
+          height: 50px;
+          background: none;
+          margin: 20px auto;
+          font-size: 30px;
+          font-weight: 600;
+          color: $main-color;
+          grid-area: CreateBlockButton;
+          &:hover {
+            transition: 0.7s;
+            color: $hover-form;
+            background-color: $main-color;
+          }
+        }
+        .BankTitleForm {
+          @extend %FormTitle;
+        }
+        .BankFormInput {
+          @extend %FormInput;
+        }
+      }
+      .BankReload{
+        display: none;
+        margin-bottom: 20px;
+      }
+    }
+    .CreateBankStatus {
+      display: inline-flex;
+      margin-top: 30px;
+      margin-bottom: 100px;
+      .PointBlock {
+        .PointTitle {
+          @extend %PointTitle;
+        }
+        .Point {
+          @extend %PointActive;
+        }
+        .GrayPointTitle {
+          @extend %GrayPointTitle;
+        }
+        .GrayPoint {
+          @extend %Point;
+        }
+      }
+      .LineBlock {
+        .Line {
+          @extend %LineActive;
+        }
+        .GreyLine {
+          @extend %Line;
+        }
+      }
+    }
+  }
+}

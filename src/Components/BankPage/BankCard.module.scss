@@ -1,0 +1,25 @@
+@import "../../Style/Color.scss";
+@import "../../Style/Template.scss";
+.BankCard {
+  display: grid;
+  height: 500px;
+  .BankCardImg {
+    margin: 0 auto;
+    width: 400px;
+    height: 400px;
+  }
+  .BankCardBut {
+    transition: .7s;
+    border: none;
+    font-weight: bold;
+    color: white;
+    background-color: $gold-mustard;
+    width: 200px;
+    margin: 0 auto;
+    font-size: 20px;
+    border-radius: 25px;
+    &:hover {
+      background-color: $main-color;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+@import "../../Style/Color.scss";
+@import "../../Style/Template.scss";
+.RefArrow {
+  .Arrow {
+    font-size: 80px;
+    float: right;
+    color: $main-color;
+    &:hover {
+      color: $gold-mustard;
+    }
+  }
+}

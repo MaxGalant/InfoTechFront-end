@@ -1,0 +1,74 @@
+@import "../../Style/Color.scss";
+@import "../../Style/Template.scss";
+.Bank {
+  display: block;
+  position: relative;
+  .Header {
+    @extend %Header;
+  }
+  .BankIntroduction {
+    margin: 60px auto;
+    width: 900px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    grid-template-areas: "IntroductionTitle IntroductionImg";
+    .IntroductionTitle {
+      grid-area: IntroductionTitle;
+      .IntroductionText {
+        font-size: 50px;
+        font-weight: bold;
+        color: $main-color;
+        .TextPart2 {
+          color: $gold-mustard;
+        }
+      }
+    }
+    .IntroductionImg {
+      grid-area: IntroductionImg;
+      widows: 300px;
+      height: 300px;
+    }
+  }
+  .BankCardBlock {
+    display: grid;
+    grid-gap: 50px;
+    margin: 0 50px 50px 50px ;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: " CreateCard EditCard DeleteCard ";
+    .CreateCard {
+      grid-area: CreateCard;
+    }
+    .EditCard {
+      grid-area: EditCard;
+    }
+    .DeleteCard {
+      grid-area: DeleteCard;
+    }
+  }
+  .Create {
+    margin-top: 100px;
+    width: 100%;
+    display: none;
+  }
+  .Delete {
+    margin-top: 100px;
+    width: 100%;
+    display: none;
+  }
+  .Edit {
+    margin-top: 100px;
+    width: 100%;
+    display: none;
+  }
+  .BankSet {
+    position: absolute;
+    top: 400px;
+  }
+  .RefArrowBlock{
+    top:800px;
+    right: 0;
+    position: absolute;
+    position: fixed;
+  }
+}

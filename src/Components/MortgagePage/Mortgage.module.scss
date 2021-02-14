@@ -1,0 +1,93 @@
+@import "../../Style/Color.scss";
+@import "../../Style/Template.scss";
+.Mortgage {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows:.3fr  1fr 1fr;
+  grid-template-areas: "Header Header Header" ". MortgageBlock ." ". Table . ";
+  .Header{
+    grid-area: Header;
+    @extend %Header;
+  }
+  .MortgageBlock {
+    width: 100%;
+    height: 500px;
+    border: 3px solid $main-color;
+    border-radius: 20px;
+    grid-area: MortgageBlock;
+    display: grid;
+    grid-template-rows: 0.3fr 1fr;
+    grid-template-areas: "MortgageBlockTitle" "MortgageBlockCalculator";
+    .MortgageBlockTitle {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 45px;
+      color: $main-color;
+      font-weight: 500;
+      grid-area: MortgageBlockTitle;
+    }
+    .MortgageBlockCalculator {
+      grid-area: MortgageBlockCalculator;
+      display: grid;
+      grid-template-rows:  1fr .3fr;
+      grid-template-areas: "MortgageBlockCalculatorInputs" "MortgageBlockCalBut";
+      .MortgageBlockCalculatorInputs {
+          width: 300px;
+    
+          grid-area: MortgageBlockCalculatorInputs;
+          margin: 30px auto 0 auto;
+          display: grid;
+          grid-template-rows: 1fr 1fr 1fr;
+          grid-template-areas: "MortgageBlockCalInitial" "MortgageBlockCalDownPayment" "MortgageBlockCalBank";
+        .MortgageBlockCalInitial {
+          @extend %CalculateInput;
+          grid-area: MortgageBlockCalInitial;
+        }
+        .MortgageBlockCalDownPayment {
+          @extend %CalculateInput;
+          grid-area: MortgageBlockCalDownPayment;
+        }
+        .MortgageBlockCalBank {
+          @extend %CalculateInput;
+          grid-area: MortgageBlockCalBank;
+        }
+      }
+      .MortgageBlockCalBut {
+        color: white;
+        background-color: $gold-mustard;
+        font-weight: 600;
+        font-size: 25px;
+        margin: 0 auto;
+        border-radius: 30px;
+        width: 200px;
+        height: 50px;
+        grid-area: MortgageBlockCalBut;
+      }
+      .ResultBlock {
+        display: none;
+        margin: 0 auto;
+        font-size: 25px;
+        font-weight: 500;
+        color: $main-color;
+        .Result {
+          color: $gold-mustard;
+        }
+      }
+    }
+    .Message {
+      @extend %Message;
+   margin-bottom: 50px;
+      width: 500px;
+    }
+  }
+  .Table {
+    display: none;
+    grid-area: Table;
+  }
+  .RefArrowBlock{
+    margin-top: 800px;
+    right: 0;
+    position: absolute;
+    position: fixed;
+  }
+}

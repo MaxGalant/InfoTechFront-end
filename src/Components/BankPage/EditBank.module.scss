@@ -1,0 +1,107 @@
+@import "../../Style/Template.scss";
+@import "../../Style/Color.scss";
+.EditBank {
+  margin-bottom: 100px;
+  width: 100%;
+  height: 300px;
+  display: grid;
+  grid-template-columns: 1fr 0.8fr 1fr;
+  grid-template-areas: ". EditBankBlock .";
+  .EditBankBlock {
+    border-radius: 50px;
+    grid-area: EditBankBlock;
+    display: grid;
+    border: 3px solid $main-color;
+    grid-template-rows: 0.3fr 0.2fr 1fr;
+    grid-template-areas: " EditTitle" "EditBankElements" "EditSelectBut";
+
+    .EditTitle {
+      margin: 30px auto;
+      grid-area: EditTitle;
+      font-size: 45px;
+      font-weight: 600;
+      color: $main-color;
+      text-align: center;
+    }
+    .EditBankElements {
+      font-size: 25px;
+      margin: 10px 80px;
+      grid-area: EditBankElements;
+      width: 300px;
+      height: 50px;
+    }
+    .EditSelectBut {
+      background-color: $gold-mustard;
+      border-radius: 20px;
+      margin: 30px auto;
+      grid-area: EditSelectBut;
+      width: 250px;
+      height: 60px;
+      font-size: 30px;
+      font-weight: 600;
+      color: white;
+      &:hover {
+        background-color: $main-color;
+        transition: 0.7s;
+      }
+    }
+
+    .EditBankData {
+      display: none;
+      width: 400px;
+      margin: 0 auto 50px auto;
+      grid-area: EditSelectBut;
+      .EditBankDataTitle {
+        font-weight: 600;
+        font-size: 25px;
+        color: $main-color;
+      }
+      .EditBankDataEl {
+        font-weight: 500;
+        font-size: 22px;
+        color: $gold-mustard;
+      }
+      .EditBankDataContainer {
+        display: grid;
+        grid-template-columns: 1fr 0.5fr;
+        grid-template-areas: " EditBankDataInput EditBankDataBut";
+
+        .EditBankDataInput {
+          grid-area: EditBankDataInput;
+          margin: 0 10px 0 0;
+        }
+        .EditBankDataBut {
+          grid-area: EditBankDataBut;
+          font-size: 20px;
+          width: 80px;
+          height: 40px;
+          color: white;
+          background: $gold-mustard;
+        }
+      }
+    }
+    .Message1 {
+      @extend %Message;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .Message {
+      @extend %Message;
+      text-align: left;
+      font-size: 20px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .Success{
+      @extend %Message;
+      color: $main-color;
+      text-align: left;
+      font-size: 20px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .Reload{
+      display: none;
+    }
+  }
+}
