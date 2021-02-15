@@ -38,10 +38,11 @@ const Mortgage = (props) => {
         (Response) => {
           console.log(Response.status);
           if (Response.status === 200) {
+            debugger
             setData(Response.data);
             console.log(Response.data)
             setMonth(Response.data[0].loan_term);
-            SetRent(Response.data[0].min_down_payment / 100);
+            SetRent(Response.data[0].interest_rate/ 100);
           } else {
             setMessage("Error, something went wrong");
           }

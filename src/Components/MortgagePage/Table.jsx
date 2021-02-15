@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import s from "./Table.module.scss";
 const Table = (props) => {
+  
   let table = [];
   let TotalPayment = Number(props.result);
   let initialLoan = props.initialLoan - props.downPayment;
@@ -9,7 +10,6 @@ const Table = (props) => {
   let balanceRent = 0;
   for (let i = 0; i < props.month; i++) {
     let rent = Number((initial * props.rent) / 12);
-
     downPayment += TotalPayment - rent;
     balanceRent += rent;
     initialLoan -= TotalPayment;
