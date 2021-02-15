@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/InfoTechFront-end/static/css/main.b74afe93.chunk.css",
-    "main.js": "/InfoTechFront-end/static/js/main.b956411e.chunk.js",
-    "main.js.map": "/InfoTechFront-end/static/js/main.b956411e.chunk.js.map",
+    "main.js": "/InfoTechFront-end/static/js/main.cc1e7513.chunk.js",
+    "main.js.map": "/InfoTechFront-end/static/js/main.cc1e7513.chunk.js.map",
     "runtime-main.js": "/InfoTechFront-end/static/js/runtime-main.73c30556.js",
     "runtime-main.js.map": "/InfoTechFront-end/static/js/runtime-main.73c30556.js.map",
     "static/js/2.639db73a.chunk.js": "/InfoTechFront-end/static/js/2.639db73a.chunk.js",
@@ -23,6 +23,6 @@
     "static/js/runtime-main.73c30556.js",
     "static/js/2.639db73a.chunk.js",
     "static/css/main.b74afe93.chunk.css",
-    "static/js/main.b956411e.chunk.js"
+    "static/js/main.cc1e7513.chunk.js"
   ]
 }
