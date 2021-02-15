@@ -15,9 +15,18 @@ const Mortgage = (props) => {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    Axios.get("https://elif-tech-task.herokuapp.com/bank").then((Response) => {
-      setBanks(Response.data);
-    });
+    Axios.get("https://elif-tech-task.herokuapp.com/bank").then(
+      (Response) => {
+        if (Response.status === 200) {
+          setBanks(Response.data);
+        } else {
+          setMessage("Error, something went wrong");
+        }
+      },
+      (err) => {
+        setMessage("Error, something went wrong");
+      }
+    );
   }, []);
 
   function getSelected(e) {
@@ -25,11 +34,12 @@ const Mortgage = (props) => {
     if (selectBank.value !== "None") {
       let strBank = selectBank.value.substring(3);
       let arrBank = strBank.split(" ");
-      Axios.get("http://localhost:3001/bank/" + arrBank[0]).then(
+      Axios.get("https://elif-tech-task.herokuapp.com/bank/" + arrBank[0]).then(
         (Response) => {
-          console.log(Response.status)
+          console.log(Response.status);
           if (Response.status === 200) {
             setData(Response.data);
+            console.log(Response.data)
             setMonth(Response.data[0].loan_term);
             SetRent(Response.data[0].min_down_payment / 100);
           } else {
@@ -37,7 +47,7 @@ const Mortgage = (props) => {
           }
         },
         (err) => {
-          console.log(Response.status)
+          console.log(Response.status);
           setMessage("Error, something went wrong");
         }
       );
@@ -48,12 +58,12 @@ const Mortgage = (props) => {
     let table = document.getElementById("Table");
     let result = document.getElementById("Result");
     let selectBank = document.getElementById("Select");
-    let rent = (initialLoan * dataBank[0].min_down_payment) / 100;
 
     if (selectBank.value !== "None") {
       if (!isNaN(Number(initialLoan))) {
         if (Number(initialLoan) > 0) {
           if (initialLoan > downPayment) {
+            let rent = (initialLoan * dataBank[0].min_down_payment) / 100;
             if (downPayment >= rent) {
               if (initialLoan <= dataBank[0].max_loan) {
                 let interestRate = dataBank[0].interest_rate / 100;
@@ -91,13 +101,15 @@ const Mortgage = (props) => {
       setMessage("Please, select a bank");
     }
   }
-  let bank=[]
+  let bank = [];
   if (banks.length > 0) {
-     bank = banks.map((p) => (
+    bank = banks.map((p) => (
       <option key={p.Id}>
         ID:{p.Id} {p.name}
       </option>
     ));
+  } else {
+    bank.push(<option>No available banks</option>);
   }
   function getInitialLoan(e) {
     setInitialLoan(Number(e.target.value));
