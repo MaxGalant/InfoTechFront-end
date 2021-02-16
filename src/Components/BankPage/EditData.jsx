@@ -19,10 +19,13 @@ const EditData = (props) => {
     let inputValue = e.target.parentElement.children[0].value;
 
     if (inputValue.length > 0) {
-      Axios.put("https://elif-tech-task.herokuapp.com/update/name/" + props.Id, {
-        name: inputValue,
-      }).then(
-        (Response) => {
+      Axios.put(
+        "https://elif-tech-task.herokuapp.com/update/name/" + props.Id,
+        {
+          name: inputValue,
+        }
+      )
+        .then((Response) => {
           if (Response.status === 200) {
             e.target.parentElement.parentElement.children[2].innerHTML = "";
             e.target.parentElement.parentElement.children[3].innerHTML =
@@ -31,13 +34,12 @@ const EditData = (props) => {
             let reload = document.getElementById("Reload");
             reload.style.display = "block";
           }
-        },
-        (err) => {
+        })
+        .catch((error) => {
           e.target.parentElement.parentElement.children[3].innerHTML = "";
           e.target.parentElement.parentElement.children[2].innerHTML =
-            "Error, something went wrong";
-        }
-      );
+            error.message;
+        });
     } else {
       e.target.parentElement.parentElement.children[2].innerHTML =
         "The field value must not be empty ";
@@ -50,8 +52,8 @@ const EditData = (props) => {
         if (inputValue < 100) {
           Axios.put("http://localhost:3001/update/rate/" + props.Id, {
             rate: inputValue,
-          }).then(
-            (Response) => {
+          })
+            .then((Response) => {
               if (Response.status === 200) {
                 e.target.parentElement.parentElement.children[2].innerHTML = "";
                 e.target.parentElement.parentElement.children[3].innerHTML =
@@ -60,13 +62,12 @@ const EditData = (props) => {
                 let reload = document.getElementById("Reload");
                 reload.style.display = "block";
               }
-            },
-            (err) => {
+            })
+            .catch((error) => {
               e.target.parentElement.parentElement.children[3].innerHTML = "";
               e.target.parentElement.parentElement.children[2].innerHTML =
-                "Error, something went wrong";
-            }
-          );
+                error.message;
+            });
         } else {
           e.target.parentElement.parentElement.children[2].innerHTML =
             "The field value must be less than 100%";
@@ -84,10 +85,13 @@ const EditData = (props) => {
     let inputValue = Number(e.target.parentElement.children[0].value);
     if (!isNaN(inputValue)) {
       if (inputValue > 0) {
-        Axios.put("https://elif-tech-task.herokuapp.com/update/max_loan/" + props.Id, {
-          max_loan: inputValue,
-        }).then(
-          (Response) => {
+        Axios.put(
+          "https://elif-tech-task.herokuapp.com/update/max_loan/" + props.Id,
+          {
+            max_loan: inputValue,
+          }
+        )
+          .then((Response) => {
             if (Response.status === 200) {
               e.target.parentElement.parentElement.children[2].innerHTML = "";
               e.target.parentElement.parentElement.children[3].innerHTML =
@@ -96,13 +100,12 @@ const EditData = (props) => {
               let reload = document.getElementById("Reload");
               reload.style.display = "block";
             }
-          },
-          (err) => {
+          })
+          .catch((error) => {
             e.target.parentElement.parentElement.children[3].innerHTML = "";
             e.target.parentElement.parentElement.children[2].innerHTML =
-              "Error, something went wrong";
-          }
-        );
+              error.message;
+          });
       } else {
         e.target.parentElement.parentElement.children[2].innerHTML =
           "The field value must be more than 0$";
@@ -117,10 +120,13 @@ const EditData = (props) => {
     if (!isNaN(inputValue)) {
       if (inputValue > 0) {
         if (inputValue < 100) {
-          Axios.put("https://elif-tech-task.herokuapp.com/update/min_loan/" + props.Id, {
-            min_loan: inputValue,
-          }).then(
-            (Response) => {
+          Axios.put(
+            "https://elif-tech-task.herokuapp.com/update/min_loan/" + props.Id,
+            {
+              min_loan: inputValue,
+            }
+          )
+            .then((Response) => {
               if (Response.status === 200) {
                 e.target.parentElement.parentElement.children[2].innerHTML = "";
                 e.target.parentElement.parentElement.children[3].innerHTML =
@@ -129,13 +135,12 @@ const EditData = (props) => {
                 let reload = document.getElementById("Reload");
                 reload.style.display = "block";
               }
-            },
-            (err) => {
+            })
+            .catch((error) => {
               e.target.parentElement.parentElement.children[3].innerHTML = "";
               e.target.parentElement.parentElement.children[2].innerHTML =
-                "Error, something went wrong";
-            }
-          );
+                error.message;
+            });
         } else {
           e.target.parentElement.parentElement.children[2].innerHTML =
             "The field value must be less than 100%";
@@ -154,10 +159,13 @@ const EditData = (props) => {
     if (!isNaN(inputValue)) {
       if (inputValue > 0) {
         if (inputValue < 240) {
-          Axios.put("https://elif-tech-task.herokuapp.com/update/loan_term/" + props.Id, {
-            loan_term: inputValue,
-          }).then(
-            (Response) => {
+          Axios.put(
+            "https://elif-tech-task.herokuapp.com/update/loan_term/" + props.Id,
+            {
+              loan_term: inputValue,
+            }
+          )
+            .then((Response) => {
               if (Response.status === 200) {
                 e.target.parentElement.parentElement.children[2].innerHTML = "";
                 e.target.parentElement.parentElement.children[3].innerHTML =
@@ -166,13 +174,12 @@ const EditData = (props) => {
                 let reload = document.getElementById("Reload");
                 reload.style.display = "block";
               }
-            },
-            (err) => {
+            })
+            .catch((error) => {
               e.target.parentElement.parentElement.children[3].innerHTML = "";
               e.target.parentElement.parentElement.children[2].innerHTML =
-                "Error, something went wrong";
-            }
-          );
+                error.message;
+            });
         } else {
           e.target.parentElement.parentElement.children[2].innerHTML =
             "The field value must be less than 240 month";

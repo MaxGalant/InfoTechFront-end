@@ -15,18 +15,15 @@ const Mortgage = (props) => {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    Axios.get("https://elif-tech-task.herokuapp.com/bank").then(
-      (Response) => {
+    Axios.get("https://elif-tech-task.herokuapp.com/bank")
+      .then((Response) => {
         if (Response.status === 200) {
           setBanks(Response.data);
-        } else {
-          setMessage("Error, something went wrong");
         }
-      },
-      (err) => {
-        setMessage("Error, something went wrong");
-      }
-    );
+      })
+      .catch((error) => {
+        setMessage(error.message);
+      });
   }, []);
 
   function getSelected(e) {
@@ -34,24 +31,18 @@ const Mortgage = (props) => {
     if (selectBank.value !== "None") {
       let strBank = selectBank.value.substring(3);
       let arrBank = strBank.split(" ");
-      Axios.get("https://elif-tech-task.herokuapp.com/bank/" + arrBank[0]).then(
-        (Response) => {
+      Axios.get("https://elif-tech-task.herokuapp.com/bank/" + arrBank[0])
+        .then((Response) => {
           console.log(Response.status);
           if (Response.status === 200) {
-            debugger
             setData(Response.data);
-            console.log(Response.data)
             setMonth(Response.data[0].loan_term);
-            SetRent(Response.data[0].interest_rate/ 100);
-          } else {
-            setMessage("Error, something went wrong");
+            SetRent(Response.data[0].interest_rate / 100);
           }
-        },
-        (err) => {
-          console.log(Response.status);
-          setMessage("Error, something went wrong");
-        }
-      );
+        })
+        .catch((error) => {
+          setMessage(error.message);
+        });
     }
   }
 
