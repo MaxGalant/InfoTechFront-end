@@ -10,11 +10,7 @@ const DeleteBank = (props) => {
   useEffect(() => {
     Axios.get("https://elif-tech-task.herokuapp.com/bank")
       .then((Response) => {
-        if (Response.status === 200) {
-          setBanks(Response.data);
-        } else {
-          setMessage("Error, something went wrong");
-        }
+        setBanks(Response.data);
       })
       .catch((error) => {
         setMessage(error.message);
@@ -58,7 +54,6 @@ const DeleteBank = (props) => {
       reload.style.display = "none";
       setMessage("Please, select the bank");
     }
-  
   }
   return (
     <div className={s.DeleteBank}>

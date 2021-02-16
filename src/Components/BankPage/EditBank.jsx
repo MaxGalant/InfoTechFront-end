@@ -10,11 +10,7 @@ const EditBank = (props) => {
   useEffect(() => {
     Axios.get("https://elif-tech-task.herokuapp.com/bank")
       .then((Response) => {
-        if (Response.status === 200) {
-          setBanks(Response.data);
-        } else {
-          setMessage("Error, something went wrong");
-        }
+        setBanks(Response.data);
       })
       .catch((error) => {
         setMessage(error.message);
@@ -34,14 +30,10 @@ const EditBank = (props) => {
       let editData = document.getElementById("EditData");
       Axios.get("https://elif-tech-task.herokuapp.com/bank/" + arrBank[0])
         .then((Response) => {
-          if (Response.status === 200) {
-            setData(Response.data);
-            setMessage("");
-            e.target.style.display = "none";
-            editData.style.display = "block";
-          } else {
-            setMessage("Error, something went wrong");
-          }
+          setData(Response.data);
+          setMessage("");
+          e.target.style.display = "none";
+          editData.style.display = "block";
         })
         .catch((error) => {
           setMessage(error.message);

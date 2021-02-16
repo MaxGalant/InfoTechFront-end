@@ -26,14 +26,12 @@ const EditData = (props) => {
         }
       )
         .then((Response) => {
-          if (Response.status === 200) {
-            e.target.parentElement.parentElement.children[2].innerHTML = "";
-            e.target.parentElement.parentElement.children[3].innerHTML =
-              "Successfully edited";
-            e.target.parentElement.children[0].value = "";
-            let reload = document.getElementById("Reload");
-            reload.style.display = "block";
-          }
+          e.target.parentElement.parentElement.children[2].innerHTML = "";
+          e.target.parentElement.parentElement.children[3].innerHTML =
+            "Successfully edited";
+          e.target.parentElement.children[0].value = "";
+          let reload = document.getElementById("Reload");
+          reload.style.display = "block";
         })
         .catch((error) => {
           e.target.parentElement.parentElement.children[3].innerHTML = "";
@@ -50,18 +48,19 @@ const EditData = (props) => {
     if (!isNaN(inputValue)) {
       if (inputValue > 0) {
         if (inputValue < 100) {
-          Axios.put("http://localhost:3001/update/rate/" + props.Id, {
-            rate: inputValue,
-          })
+          Axios.put(
+            "https://elif-tech-task.herokuapp.com/update/rate/" + props.Id,
+            {
+              rate: inputValue,
+            }
+          )
             .then((Response) => {
-              if (Response.status === 200) {
-                e.target.parentElement.parentElement.children[2].innerHTML = "";
-                e.target.parentElement.parentElement.children[3].innerHTML =
-                  "Successfully edited";
-                e.target.parentElement.children[0].value = "";
-                let reload = document.getElementById("Reload");
-                reload.style.display = "block";
-              }
+              e.target.parentElement.parentElement.children[2].innerHTML = "";
+              e.target.parentElement.parentElement.children[3].innerHTML =
+                "Successfully edited";
+              e.target.parentElement.children[0].value = "";
+              let reload = document.getElementById("Reload");
+              reload.style.display = "block";
             })
             .catch((error) => {
               e.target.parentElement.parentElement.children[3].innerHTML = "";
@@ -92,14 +91,12 @@ const EditData = (props) => {
           }
         )
           .then((Response) => {
-            if (Response.status === 200) {
-              e.target.parentElement.parentElement.children[2].innerHTML = "";
-              e.target.parentElement.parentElement.children[3].innerHTML =
-                "Successfully edited";
-              e.target.parentElement.children[0].value = "";
-              let reload = document.getElementById("Reload");
-              reload.style.display = "block";
-            }
+            e.target.parentElement.parentElement.children[2].innerHTML = "";
+            e.target.parentElement.parentElement.children[3].innerHTML =
+              "Successfully edited";
+            e.target.parentElement.children[0].value = "";
+            let reload = document.getElementById("Reload");
+            reload.style.display = "block";
           })
           .catch((error) => {
             e.target.parentElement.parentElement.children[3].innerHTML = "";
@@ -127,14 +124,12 @@ const EditData = (props) => {
             }
           )
             .then((Response) => {
-              if (Response.status === 200) {
-                e.target.parentElement.parentElement.children[2].innerHTML = "";
-                e.target.parentElement.parentElement.children[3].innerHTML =
-                  "Successfully edited";
-                e.target.parentElement.children[0].value = "";
-                let reload = document.getElementById("Reload");
-                reload.style.display = "block";
-              }
+              e.target.parentElement.parentElement.children[2].innerHTML = "";
+              e.target.parentElement.parentElement.children[3].innerHTML =
+                "Successfully edited";
+              e.target.parentElement.children[0].value = "";
+              let reload = document.getElementById("Reload");
+              reload.style.display = "block";
             })
             .catch((error) => {
               e.target.parentElement.parentElement.children[3].innerHTML = "";
@@ -166,14 +161,12 @@ const EditData = (props) => {
             }
           )
             .then((Response) => {
-              if (Response.status === 200) {
-                e.target.parentElement.parentElement.children[2].innerHTML = "";
-                e.target.parentElement.parentElement.children[3].innerHTML =
-                  "Successfully edited";
-                e.target.parentElement.children[0].value = "";
-                let reload = document.getElementById("Reload");
-                reload.style.display = "block";
-              }
+              e.target.parentElement.parentElement.children[2].innerHTML = "";
+              e.target.parentElement.parentElement.children[3].innerHTML =
+                "Successfully edited";
+              e.target.parentElement.children[0].value = "";
+              let reload = document.getElementById("Reload");
+              reload.style.display = "block";
             })
             .catch((error) => {
               e.target.parentElement.parentElement.children[3].innerHTML = "";

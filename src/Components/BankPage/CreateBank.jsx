@@ -88,26 +88,21 @@ const CreateBank = (props) => {
                             )
                               .then((Response) => {
                                 console.log(Response.status);
-                                if (Response.status === 200) {
-                                  setCompleted(
-                                    "Congratulations, you successfully have created a bank! "
-                                  );
-                                  setMessage("");
-                                  let line2 = document.getElementById("Line2");
-                                  let point2 = document.getElementById(
-                                    "Point2"
-                                  );
-                                  let title2 = document.getElementById(
-                                    "PointT2"
-                                  );
-                                  let reload = document.getElementById(
-                                    "BankReload"
-                                  );
-                                  title2.classList = `${s.PointTitle}`;
-                                  line2.classList = `${s.Line}`;
-                                  point2.classList = `${s.Point}`;
-                                  reload.style.display = "block";
-                                }
+
+                                setCompleted(
+                                  "Congratulations, you successfully have created a bank! "
+                                );
+                                setMessage("");
+                                let line2 = document.getElementById("Line2");
+                                let point2 = document.getElementById("Point2");
+                                let title2 = document.getElementById("PointT2");
+                                let reload = document.getElementById(
+                                  "BankReload"
+                                );
+                                title2.classList = `${s.PointTitle}`;
+                                line2.classList = `${s.Line}`;
+                                point2.classList = `${s.Point}`;
+                                reload.style.display = "block";
                               })
                               .catch((error) => {
                                 setCompleted("");

@@ -13,11 +13,11 @@ const BankSet = (props) => {
     Axios.get("https://elif-tech-task.herokuapp.com/bank")
       .then((Response) => {
         console.log(Response.status);
-        if (Response.status === 200) {
+       
           console.log(Response);
           setBanks(Response.data);
           setMessage("");
-        }
+        
       })
       .catch((error) => {
         setMessage(error.message);

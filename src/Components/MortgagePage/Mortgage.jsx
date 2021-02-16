@@ -17,9 +17,7 @@ const Mortgage = (props) => {
   useEffect(() => {
     Axios.get("https://elif-tech-task.herokuapp.com/bank")
       .then((Response) => {
-        if (Response.status === 200) {
-          setBanks(Response.data);
-        }
+        setBanks(Response.data);
       })
       .catch((error) => {
         setMessage(error.message);
@@ -33,12 +31,9 @@ const Mortgage = (props) => {
       let arrBank = strBank.split(" ");
       Axios.get("https://elif-tech-task.herokuapp.com/bank/" + arrBank[0])
         .then((Response) => {
-          console.log(Response.status);
-          if (Response.status === 200) {
-            setData(Response.data);
-            setMonth(Response.data[0].loan_term);
-            SetRent(Response.data[0].interest_rate / 100);
-          }
+          setData(Response.data);
+          setMonth(Response.data[0].loan_term);
+          SetRent(Response.data[0].interest_rate / 100);
         })
         .catch((error) => {
           setMessage(error.message);
