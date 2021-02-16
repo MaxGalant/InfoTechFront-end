@@ -76,14 +76,18 @@ const CreateBank = (props) => {
                       if (!isNaN(loan_term)) {
                         if (loan_term > 0) {
                           if (loan_term < 240) {
-                            Axios.post("https://elif-tech-task.herokuapp.com/create_bank", {
-                              name: name,
-                              interest_rate: interest_rate,
-                              max_loan: max_loan,
-                              min_down_payment: min_down_payment,
-                              loan_term: loan_term,
-                            }).then(
-                              (Response) => {
+                            Axios.post(
+                              "https://elif-tech-task.herokuapp.com/create_bank",
+                              {
+                                name: name,
+                                interest_rate: interest_rate,
+                                max_loan: max_loan,
+                                min_down_payment: min_down_payment,
+                                loan_term: loan_term,
+                              }
+                            )
+                              .then((Response) => {
+                                console.log(Response.status);
                                 if (Response.status === 200) {
                                   setCompleted(
                                     "Congratulations, you successfully have created a bank! "
@@ -96,20 +100,19 @@ const CreateBank = (props) => {
                                   let title2 = document.getElementById(
                                     "PointT2"
                                   );
-                                  let reload=document.getElementById("BankReload")
+                                  let reload = document.getElementById(
+                                    "BankReload"
+                                  );
                                   title2.classList = `${s.PointTitle}`;
                                   line2.classList = `${s.Line}`;
                                   point2.classList = `${s.Point}`;
-                                  reload.style.display="block"
-                                } else {
-                                  setMessage("Error, something went wrong");
+                                  reload.style.display = "block";
                                 }
-                              },
-                              (err) => {
+                              })
+                              .catch((error) => {
                                 setCompleted("");
-                                setMessage("Error, something went wrong");
-                              }
-                            );
+                                setMessage(error.message);
+                              });
                           } else {
                             setMessage(
                               "Loan term must be  less than 240 month"

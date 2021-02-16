@@ -8,18 +8,17 @@ const EditBank = (props) => {
   const [dataBank, setData] = useState([]);
   const [message, setMessage] = useState("");
   useEffect(() => {
-    Axios.get("https://elif-tech-task.herokuapp.com/bank").then(
-      (Response) => {
+    Axios.get("https://elif-tech-task.herokuapp.com/bank")
+      .then((Response) => {
         if (Response.status === 200) {
           setBanks(Response.data);
         } else {
           setMessage("Error, something went wrong");
         }
-      },
-      (err) => {
-        setMessage("Error, something went wrong");
-      }
-    );
+      })
+      .catch((error) => {
+        setMessage(error.message);
+      });
   }, []);
   function changeSelect() {
     let but = document.getElementById("SelectBut");
@@ -33,8 +32,8 @@ const EditBank = (props) => {
       let strBank = selectBank.value.substring(3);
       let arrBank = strBank.split(" ");
       let editData = document.getElementById("EditData");
-      Axios.get("https://elif-tech-task.herokuapp.com/bank/" + arrBank[0]).then(
-        (Response) => {
+      Axios.get("https://elif-tech-task.herokuapp.com/bank/" + arrBank[0])
+        .then((Response) => {
           if (Response.status === 200) {
             setData(Response.data);
             setMessage("");
@@ -43,11 +42,10 @@ const EditBank = (props) => {
           } else {
             setMessage("Error, something went wrong");
           }
-        },
-        (err) => {
-          setMessage("Error, something went wrong");
-        }
-      );
+        })
+        .catch((error) => {
+          setMessage(error.message);
+        });
     } else {
       setMessage("Please, select the bank");
     }

@@ -8,18 +8,17 @@ const DeleteBank = (props) => {
   const [message, setMessage] = useState("");
   const [success, setSuccess] = useState("");
   useEffect(() => {
-    Axios.get("https://elif-tech-task.herokuapp.com/bank").then(
-      (Response) => {
+    Axios.get("https://elif-tech-task.herokuapp.com/bank")
+      .then((Response) => {
         if (Response.status === 200) {
           setBanks(Response.data);
         } else {
           setMessage("Error, something went wrong");
         }
-      },
-      (err) => {
-        setMessage("Error, something went wrong");
-      }
-    );
+      })
+      .catch((error) => {
+        setMessage(error.message);
+      });
   }, []);
   let bank = [];
   if (banks.length > 0) {
@@ -40,23 +39,26 @@ const DeleteBank = (props) => {
     let arrBank = strBank.split(" ");
     if (selectBank !== "None") {
       Axios.delete(
-        "https://elif-tech-task.herokuapp.com/delete/bank/" + arrBank[0] + "/" + arrBank[1]
-      ).then(
-        (Response) => {
+        "https://elif-tech-task.herokuapp.com/delete/bank/" +
+          arrBank[0] +
+          "/" +
+          arrBank[1]
+      )
+        .then((Response) => {
           setMessage("");
           setSuccess("Successfully delete the bank");
-        },
-        (err) => {
           reload.style.display = "block";
-          setMessage("Error, something went wrong");
+        })
+        .catch((error) => {
           setSuccess("");
-        }
-      );
+          setMessage(error.message);
+          reload.style.display = "block";
+        });
     } else {
       reload.style.display = "none";
       setMessage("Please, select the bank");
     }
-    setSuccess("");
+  
   }
   return (
     <div className={s.DeleteBank}>

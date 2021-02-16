@@ -8,26 +8,20 @@ import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 const BankSet = (props) => {
   const [banks, setBanks] = useState([]);
   const [message, setMessage] = useState("");
- 
+
   useEffect(() => {
-    Axios.get("https://elif-tech-task.herokuapp.com/bank").then(
-      (Response) => {
+    Axios.get("https://elif-tech-task.herokuapp.com/bank")
+      .then((Response) => {
+        console.log(Response.status);
         if (Response.status === 200) {
-          if (Response.data.length > 0) {
-            console.log(Response)
-            setBanks(Response.data);
-            setMessage("");
-          } else {
-            setMessage("Error, something went wrong");
-          }
-        } else {
-          setMessage("Error, something went wrong");
+          console.log(Response);
+          setBanks(Response.data);
+          setMessage("");
         }
-      },
-      (err) => {
-        setMessage("Error, something went wrong");
-      }
-    );
+      })
+      .catch((error) => {
+        setMessage(error.message);
+      });
   }, []);
 
   function HoverList(e) {
